@@ -29,14 +29,15 @@ export const App = () => {
 	const selectsStep = (event) => {
 		const buttonIndex = event.target.textContent - 1;
 		setActiveIndex(buttonIndex);
+		setIsFirstStep(false);
 
 		if (buttonIndex === steps.length - 1) {
 			setIsLastStep(true);
 		} else if (buttonIndex === 0) {
 			setIsFirstStep(true);
-		} else {
 			setIsLastStep(false);
-			setIsFirstStep(false);
+		} else {
+			setIsLastStep(false);			
 		}
 	};
 
